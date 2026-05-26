@@ -1,0 +1,217 @@
+
+📘 PROJECT DOCUMENTATION — Market Trends Visualization & Analysis
+1. Project Title
+Market Trends Visualization using YAML Data, Python, Pandas, SQL & Visualization Libraries
+
+2. Project Overview
+This project processes raw stock market data stored in YAML files, cleans and transforms it into structured datasets, performs financial analysis, generates visual insights, and finally stores the processed data in a MySQL database.
+
+The project covers:
+
+Data ingestion
+
+Data cleaning & preprocessing
+
+Feature engineering
+
+Market performance analysis
+
+Sector‑wise insights
+
+Volatility & correlation analysis
+
+Monthly gainers/losers
+
+SQL database integration
+
+3. Project Objectives
+Convert raw YAML stock data into clean, structured CSV files.
+
+Compute key financial metrics such as:
+
+Daily Return
+
+Cumulative Return
+
+Monthly Return
+
+Yearly Return
+
+Volatility
+
+Visualize market trends using Matplotlib & Seaborn.
+
+Identify top performers, worst performers, and consistent growth stocks.
+
+Analyze sector‑wise performance.
+
+Build correlation heatmaps for stock relationships.
+
+Store final cleaned dataset into a MySQL database.
+
+4. Tech Stack
+Languages & Libraries
+Python
+
+Pandas
+
+YAML
+
+Matplotlib
+
+Seaborn
+
+MySQL Connector
+
+SQLAlchemy
+
+Database
+MySQL
+
+5. Data Sources
+Input
+Folder containing multiple .yaml files
+
+Sector mapping CSV file
+Example fields from YAML (as seen in code):
+
+“Ticker”, “date”, “open”, “high”, “low”, “close”, “volume”, “month”
+
+Output
+Cleaned CSV: market_trends.csv
+
+SQL Table: market_trends_table
+
+6. Workflow Summary
+Step 1: Load YAML Files
+Recursively scan the input folder.
+
+Read each YAML file.
+
+Convert YAML → Pandas DataFrame.
+
+Group data by stock ticker.
+
+Step 2: Data Cleaning
+Fix incorrect column names
+
+Example from code: 'Tiker' → 'Ticker'
+
+Convert date column to datetime.
+
+Sort data by Ticker & Date.
+
+Handle missing values.
+
+Step 3: Feature Engineering
+Computed metrics include:
+
+Metric	Description
+Daily Return	% change in closing price
+Cumulative Return	Compounded return over time
+Monthly Return	First vs last close of each month
+Yearly Return	First vs last close of entire dataset
+Volatility	Standard deviation of daily returns
+
+
+Step 4: Sector Mapping
+Load sector CSV
+
+Map each ticker to its sector using a dictionary
+
+Add new column: Sector
+
+Step 5: Visualizations
+Generated charts include:
+
+Top 10 Green Stocks
+
+Top 10 Red Stocks
+
+Most Volatile Stocks
+
+Market Overview Bar Chart
+
+Consistent Growth Stocks
+
+Average Price per Stock
+
+Green vs Red Stock Pie Chart
+
+Cumulative Return Line Chart
+
+Sector‑wise Performance
+
+Correlation Heatmap
+
+Monthly Top 5 Gainers & Losers Dashboard
+
+Step 6: SQL Integration
+Create MySQL database: market_trends
+
+Upload final dataset into table: market_trends_table
+
+Verify using SQL query.
+
+7. Key Insights Generated
+1. Top Performers (Green Stocks)
+Stocks with highest yearly return.
+
+2. Worst Performers (Red Stocks)
+Stocks with negative yearly return.
+
+3. Most Volatile Stocks
+Based on standard deviation of daily returns.
+
+4. Consistent Growth Stocks
+Criteria:
+
+Positive yearly return
+
+Below‑median volatility
+
+5. Sector‑wise Performance
+Average yearly return grouped by sector.
+
+6. Market Summary
+Count of green vs red stocks
+
+Average price
+
+Average volume
+
+7. Monthly Gainers & Losers
+Top 5 winners and losers for each month.
+
+8. Final SQL Table Structure
+Table Name: market_trends_table
+
+Column	Description
+Ticker	Stock symbol
+Date	Trading date
+Open	Opening price
+High	Highest price
+Low	Lowest price
+Close	Closing price
+Volume	Trading volume
+Month	Month extracted from date
+Daily_Return	% daily return
+Cumulative_Return	Compounded return
+Monthly_Return	Monthly performance
+Yearly_Return	Annual performance
+Sector	Industry sector
+
+
+9. Conclusion
+This project successfully transforms raw YAML stock data into a fully analyzed, visualized, and SQL‑ready dataset. It provides:
+
+Actionable insights
+
+Market performance dashboards
+
+Sector‑wise comparisons
+
+Volatility & correlation analysis
+
+
+
